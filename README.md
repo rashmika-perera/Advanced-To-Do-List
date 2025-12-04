@@ -1,54 +1,86 @@
-# React + TypeScript + Vite
+# Advanced To-Do List ✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **To-Do List application** built with **React, TypeScript, and Vite**.
+This project helps you manage daily tasks efficiently with a clean UI and smooth performance.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [dailybloom-todo.vercel.app](https://dailybloom-todo.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* ➕ Add, edit, and delete tasks
+* ✅ Mark tasks as completed
+* 📱 Responsive and user-friendly design
+* ⚡ Built with **React + TypeScript** for scalability and type safety
+* ⚡ Powered by **Vite** for lightning-fast development
+* 🌐 Ready-to-deploy with Vercel
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🛠️ Tech Stack
+
+* **React** – UI library
+* **TypeScript** – Strong typing
+* **Vite** – Next-gen frontend tooling
+* **ESLint** – Code linting and quality
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/Rashmika20041/Advanced-To-Do-List.git
+
+# Navigate into the project
+cd Advanced-To-Do-List
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then, open **[http://localhost:5173/](http://localhost:5173/)** in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 📦 Build for Production
+
+```bash
+npm run build
+npm run preview
 ```
+
+---
+
+## 📷 Screenshots  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ddee323b-0234-4216-a31e-5b74b257a928" width="48%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4014b752-8070-48bf-9092-0a67079ce05d" width="48%" />
+</p>
+
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork this repo, create a branch, and submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** – free to use and modify.
+
+---
+
