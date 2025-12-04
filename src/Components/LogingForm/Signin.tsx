@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import entryBg from "../assets/entryBg.png";
+import entryBg from "../assets/entryBg.webp";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import AnimatedPage from "./AnimatedPage";
@@ -25,7 +25,7 @@ const Signin = () => {
     setLoading(true);
     await signInWithPopup(auth, provider);
     navigate("/today");
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.log("Google Sign-In Error:", err);
     setError("Google sign-in failed. Please try again.");
   } finally {
@@ -48,9 +48,10 @@ const Signin = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/today");
       
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.log("Sign in error:", err);
-      switch (err.code) {
+      const error = err as { code: string; message: string };
+      switch (error.code) {
         case "auth/invalid-credentials":
           setError("Invalid email or password. Please check your credentials and try again.");
           break;
@@ -94,7 +95,7 @@ const Signin = () => {
           />
         </div>
         <AnimatedPage>
-          <div className="flex flex-col justify-center text-center p-4 md:px-20 md:text-left md:left-0 md:w-1/4 md:rounded-2xl md:w-[600px] md:bg-gray-250 md:border-1 md:border-gray-200 md:h-[525px]">
+          <div className="flex flex-col justify-center text-center p-4 md:px-20 md:text-left md:left-0 md:rounded-2xl md:w-[600px] md:bg-gray-250 md:border-1 md:border-gray-200 md:h-[525px]">
             <form onSubmit={handleSignIn}>
               <div className="mb-5">
                 <div>

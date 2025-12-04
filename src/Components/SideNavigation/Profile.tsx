@@ -3,7 +3,7 @@ import {
   IoArrowBackCircleSharp,
 } from "react-icons/io5";
 import React from "react";
-import bg from "../assets/profileBg.jpg";
+import bg from "../assets/profileBg.webp";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase"; 
@@ -49,7 +49,7 @@ const Profile = () => {
         setSuccess("Profile updated successfully!");
       }
       console.log("Profile updated successfully");
-    } catch (error) {
+    } catch {
       setError("Failed to update profile. Please try again.");
     } finally {
       setLoading(false);
@@ -65,7 +65,7 @@ const Profile = () => {
   return (
     <div className="relative flex justify-center items-center h-screen">
       <div
-        className="absolute fixed top-0 left-0 w-full h-full bg-cover bg-center blur-[2px]"
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center blur-[2px]"
         style={{
           backgroundImage: `url(${bg})`,
           zIndex: -1,

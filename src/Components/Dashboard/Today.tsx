@@ -3,7 +3,7 @@ import { FaPlus, FaAngleRight } from "react-icons/fa6";
 import Navigation from "../SideNavigation/Navigation";
 import { FaCalendarTimes } from "react-icons/fa";
 import Task from "../Tasks/Task";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { collection, query, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { onSnapshot } from "firebase/firestore";
@@ -51,7 +51,7 @@ const Today = () => {
           if (data.dueDate) {
             try {
               dueDateString = data.dueDate.toDate().toLocaleDateString("en-CA");
-            } catch (e) {
+            } catch {
               dueDateString = "";
             }
           }
@@ -77,7 +77,7 @@ const Today = () => {
   const todayTasks = addTask.filter((task) => task.dueDate === todayDate);
   const upcomingTasks = addTask.filter((task) => task.dueDate > todayDate);
 
-  const handleDeleteTask = async (taskId: string) => {
+  const handleDeleteTask = useCallback(async (taskId: string) => {
     setAddTask((prev) => prev.filter((task) => task.id !== taskId));
 
     try {
@@ -90,7 +90,7 @@ const Today = () => {
     } catch (error) {
       console.error("Error deleting document:", error);
     }
-  };
+  }, [userUid]);
 
   useEffect(() => {
     if (addTask.length === 0) return;
@@ -100,7 +100,7 @@ const Today = () => {
     if (deleteTasks.length > 0) {
       deleteTasks.forEach((task) => handleDeleteTask(task.id));
     }
-  }, [addTask, todayDate]);
+  }, [addTask, todayDate, handleDeleteTask]);
 
   const newTask = () => {
     setTaskToEdit(null);

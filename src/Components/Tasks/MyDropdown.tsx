@@ -1,4 +1,5 @@
 import Select from "react-select";
+import type { StylesConfig } from "react-select";
 
 type ListItem = {
   id: string;
@@ -19,8 +20,8 @@ type MyDropdownProps = {
   disabled?: boolean;
 };
 
-const customStyles = {
-  control: (base: any) => ({
+const customStyles: StylesConfig<OptionType, false> = {
+  control: (base) => ({
     ...base,
     minHeight: "30px",
     height: "25px",
@@ -32,29 +33,29 @@ const customStyles = {
     borderRadius: "7px",
     border: "1px solid #D1D5DB",
   }),
-  option: (base: any, state: any) => ({
+  option: (base, props) => ({
     ...base,
-    backgroundColor: state.isFocused ? "#FEF08A" : "white",
+    backgroundColor: props.isFocused ? "#FEF08A" : "white",
     color: "#1F2937",
     fontSize: "12px",
     cursor: "pointer",
   }),
-  dropdownIndicator: (base: any) => ({
+  dropdownIndicator: (base) => ({
     ...base,
     padding: 2,
   }),
   indicatorSeparator: () => ({
     display: "none",
   }),
-  valueContainer: (base: any) => ({
+  valueContainer: (base) => ({
     ...base,
     padding: "0 8px",
   }),
-  singleValue: (base: any) => ({
+  singleValue: (base) => ({
     ...base,
     color: "#111827",
   }),
-  menu: (base: any) => ({
+  menu: (base) => ({
     ...base,
     zIndex: 9999,
   }),

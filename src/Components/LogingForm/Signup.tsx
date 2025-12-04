@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import entryBg from "../assets/entryBg.png";
+import entryBg from "../assets/entryBg.webp";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import google from "../assets/google.png";
 import AnimatedPage from "./AnimatedPage";
@@ -119,10 +119,11 @@ const Signup = () => {
       console.log(user.displayName);
 
       navigate("/today");
-    } catch (error: any) {
-      console.error("Error signing up:", error.code, error.message);
+    } catch (error: unknown) {
+      const err = error as { code: string; message: string };
+      console.error("Error signing up:", err.code, err.message);
 
-      switch (error.code) {
+      switch (err.code) {
         case "auth/email-already-in-use":
           setError(
             "This email is already registered. Please use a different email or sign in."
@@ -161,7 +162,7 @@ const Signup = () => {
       </div>
 
       <AnimatedPage>
-        <div className="flex flex-col justify-center text-center p-4 md:px-20 md:text-left md:left-0 md:w-1/4 md:rounded-2xl md:border-1 md:border-gray-200 md:w-[600px] md:bg-gray-250 md:h-[525px]">
+        <div className="flex flex-col justify-center text-center p-4 md:px-20 md:text-left md:left-0 md:rounded-2xl md:border-1 md:border-gray-200 md:w-[600px] md:bg-gray-250 md:h-[525px]">
           <form onSubmit={handleSignUp}>
             <div className="mb-5">
               <div>

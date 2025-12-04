@@ -47,7 +47,7 @@ const Upcoming = () => {
           if (data.dueDate) {
             try {
               dueDateString = data.dueDate.toDate().toLocaleDateString("en-CA");
-            } catch (e) {
+            } catch {
               dueDateString = "";
             }
           }

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import entryBg from "../assets/entryBg.png";
+import entryBg from "../assets/entryBg.webp";
 import AnimatedPage from "./AnimatedPage";
 import { useNavigate } from "react-router-dom";
 
